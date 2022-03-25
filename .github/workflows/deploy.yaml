@@ -19,10 +19,11 @@ jobs:
       - run: docker build -t ryderdain/multi-server-10-14 ./server
       - run: docker build -t ryderdain/multi-worker-10-14 ./worker
  
-      - run: docker push ryderdain/multi-client-10-14
-      - run: docker push ryderdain/multi-nginx-10-14
-      - run: docker push ryderdain/multi-server-10-14
-      - run: docker push ryderdain/multi-worker-10-14
+# Ignore for the moment, doesn't work with successive runs
+#     - run: docker push ryderdain/multi-client-10-14
+#     - run: docker push ryderdain/multi-nginx-10-14
+#     - run: docker push ryderdain/multi-server-10-14
+#     - run: docker push ryderdain/multi-worker-10-14
  
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
